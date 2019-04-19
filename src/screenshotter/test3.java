@@ -8,6 +8,8 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
+import java.io.FileNotFoundException;  
+import java.util.Scanner;
  
 import javax.imageio.ImageIO;
  
@@ -20,10 +22,11 @@ import javax.imageio.ImageIO;
 public class test3 {
  
     public static void main(String[] args) {
-        try {
-            Robot robot = new Robot();
+        int current_number = 1;
+    	try {
+        	Robot robot = new Robot();
             String format = "jpg";
-            String fileName = "FullScreenshot." + format;
+            String fileName = "FullScreenshot"+ current_number + "." + format;
             
             try {
 				Thread.sleep(10000);
