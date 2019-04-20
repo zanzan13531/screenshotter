@@ -9,7 +9,6 @@ import java.awt.AWTException;
 import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.Toolkit;
-import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileWriter;
@@ -21,13 +20,13 @@ import javax.imageio.ImageIO;
 public class test4 implements NativeKeyListener {
 
 	public test4() throws Exception {
-		// KeyEvent.getExtendedKeyCodeForChar('1');
+		
 	}
 
 	public void nativeKeyPressed(NativeKeyEvent e) {
 
-		if (e.getKeyCode() == NativeKeyEvent.VC_BACKQUOTE) { 
-			//backquote is the (`) key, next to the number 1													// the number 1
+		if (e.getKeyCode() == NativeKeyEvent.VC_BACKQUOTE) {
+			// backquote is the (`) key, next to the number 1 // the number 1
 
 			int current_number;
 
@@ -73,14 +72,20 @@ public class test4 implements NativeKeyListener {
 	public static void main(String[] args) throws Exception {
 
 		try {
+			
 			GlobalScreen.registerNativeHook();
+			
 		} catch (NativeHookException ex) {
+			
 			System.err.println("There was a problem registering the native hook.");
 			System.err.println(ex.getMessage());
 
 			System.exit(1);
+			
 		}
 
 		GlobalScreen.addNativeKeyListener(new test4());
+		
 	}
+	
 }
